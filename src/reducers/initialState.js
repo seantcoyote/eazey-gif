@@ -1,16 +1,10 @@
 export default {
-  queries: {},
-  entities: {
-    users: {},
-    userIds: [],
-  },
-  errors: {},
-  data: {
-    someData: {}
-  },
   ui: {
-    numberOfAjaxCalls: 0,
-    isDataReady: false,
-    dataLoadingError: ''
+    searchQuery: '',
+    loadError: false,
+    numberOfAjaxCalls: 0
+  },
+  gifs: {
+    searchResultGifs: []
   }
 }

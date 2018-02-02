@@ -1,13 +1,9 @@
 import {combineReducers} from 'redux'
-import {entitiesReducer, queriesReducer, errorsReducer} from 'redux-query'
-import data from './dataReducer.js'
+import gifs from './gifsReducer.js'
 import ui from './uiReducer.js'
 
 const rootReducer = combineReducers({
-  entities: entitiesReducer,
-  queries: queriesReducer,
-  errors: errorsReducer,
-  data,
+  gifs,
   ui
 })
 

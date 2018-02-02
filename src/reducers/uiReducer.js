@@ -3,22 +3,23 @@ import initialState from './initialState'
 
 export default function uiReducer (state = initialState.ui, action) {
   switch (action.type) {
-    case types.SET_IS_DATA_READY:
+    case types.UPDATE_SEACH_QUERY:
       return {
         ...state,
-        isDataReady: action.payload
+        searchQuery: action.payload
       }
 
-    case types.SET_DATA_LOADING_ERROR:
+    case types.SET_LOAD_ERROR:
       return {
         ...state,
-        dataLoadingError: action.payload
+        loadError: action.payload
       }
 
-    case types.UPDATE_NUMBER_OF_AJAX_CALLS:
+    case types.SET_NUMBER_OF_AJAX_CALLS:
+      const newNumber = state.numberOfAjaxCalls + action.payload
       return {
         ...state,
-        numberOfAjaxCalls: state.numberOfAjaxCalls + action.payload
+        numberOfAjaxCalls: newNumber
       }
 
     default:
