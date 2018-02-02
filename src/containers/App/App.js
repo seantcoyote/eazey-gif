@@ -1,33 +1,39 @@
 import React, {Component} from 'react'
-import {object} from 'prop-types'
+import {object, array} from 'prop-types'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as uiActions from '../../actions/uiActions'
+import * as gifActions from '../../actions/gifActions'
 import defaultStyles from './styles'
 
 class App extends Component {
   render () {
-    const {styles} = this.props
-
+    const {searchResultGifs, styles} = this.props
+    const searchResultsList = searchResultGifs.map(gif => <li key={gif.id}>{gif.title}</li>)
     return (
       <div style={{...defaultStyles.base, ...styles}}>
         <h1>Eaze Giphy App</h1>
+        <ul>{searchResultsList}</ul>
       </div>
     )
   }
 }
 
 App.propTypes = {
-  styles: object
+  styles: object,
+  searchResultGifs: array.isRequired,
+  uiActions: object.isRequired,
+  gifActions: object.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  appInfo: state.appInfo
+  searchResultGifs: state.gifs.searchResultGifs
 })
 
 
 const mapDispatchToProps = (dispatch) => ({
-  uiActions: bindActionCreators(uiActions, dispatch)
+  uiActions: bindActionCreators(uiActions, dispatch),
+  gifActions: bindActionCreators(gifActions, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

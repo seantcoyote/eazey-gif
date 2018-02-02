@@ -1,7 +1,7 @@
 // Takes object with keys and values to be stored in localStorage
 export const setLocalStorage = (data) => {
   try {
-    Object.keys(data).map(key => {
+    Object.keys(data).forEach(key => {
       const serializedData = JSON.stringify(data[key])
       localStorage.setItem(key, serializedData)
     })
