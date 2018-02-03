@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as uiActions from '../../actions/uiActions'
 import * as gifActions from '../../actions/gifActions'
+import {urls} from '../../constants/config'
 import defaultStyles from './styles'
 
 class App extends Component {
@@ -12,8 +13,22 @@ class App extends Component {
     const searchResultsList = searchResultGifs.map(gif => <li key={gif.id}>{gif.title}</li>)
     return (
       <div style={{...defaultStyles.base, ...styles}}>
-        <h1>Eaze Giphy App</h1>
-        <ul>{searchResultsList}</ul>
+        <header style={defaultStyles.header}>
+          <h1 style={defaultStyles.headerTitle}>the giphilator</h1>
+        </header>
+
+        <div style={defaultStyles.contentContainer}>
+          {/* <SideBar /> */}
+
+          <main style={defaultStyles.gifBoard}>
+            {searchResultsList}
+            {/* <GifDropzone selectedGifs={this.props.selectedGifs} onDrop={this.addGif}/> */}
+          </main>
+        </div>
+
+        <footer style={defaultStyles.footer}>
+          <a href={urls.footerUrl} target="_blank" style={defaultStyles.footerLink}>Who Can Make the Dance Ram?</a>
+        </footer>
       </div>
     )
   }
