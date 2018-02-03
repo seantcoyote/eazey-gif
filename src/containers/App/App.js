@@ -4,13 +4,14 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as uiActions from '../../actions/uiActions'
 import * as gifActions from '../../actions/gifActions'
+import SideBar from '../../components/SideBar'
 import {urls} from '../../constants/config'
 import defaultStyles from './styles'
 
 class App extends Component {
   render () {
-    const {searchResultGifs, styles} = this.props
-    const searchResultsList = searchResultGifs.map(gif => <li key={gif.id}>{gif.title}</li>)
+    const {styles} = this.props
+
     return (
       <div style={{...defaultStyles.base, ...styles}}>
         <header style={defaultStyles.header}>
@@ -18,11 +19,10 @@ class App extends Component {
         </header>
 
         <div style={defaultStyles.contentContainer}>
-          {/* <SideBar /> */}
+          <SideBar />
 
           <main style={defaultStyles.gifBoard}>
-            {searchResultsList}
-            {/* <GifDropzone selectedGifs={this.props.selectedGifs} onDrop={this.addGif}/> */}
+            <p>Hey Yo</p>
           </main>
         </div>
 
