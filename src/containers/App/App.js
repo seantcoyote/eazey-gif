@@ -7,10 +7,16 @@ import HTML5Backend from 'react-dnd-html5-backend'
 import * as uiActions from '../../actions/uiActions'
 import * as gifActions from '../../actions/gifActions'
 import SideBar from '../../components/SideBar'
+import UserBoard from '../../components/UserBoard'
 import {urls} from '../../constants/config'
 import defaultStyles from './styles'
 
 class App extends Component {
+  addGif = (id) => {
+    const gif = this.props.searchResultGifs.filter((gif) => gif.id === id)[0]
+    this.props.gifActions.updateSelectedGifs(gif);
+  }
+
   render () {
     const {styles} = this.props
 
@@ -24,7 +30,7 @@ class App extends Component {
           <SideBar />
 
           <main style={defaultStyles.gifBoard}>
-            <p>Hey Yo</p>
+            <UserBoard selectedGifs={this.props.selectedGifs} onDrop={this.addGif} />
           </main>
         </div>
 
@@ -39,14 +45,15 @@ class App extends Component {
 App.propTypes = {
   styles: object,
   searchResultGifs: array.isRequired,
+  selectedGifs: object.isRequired,
   uiActions: object.isRequired,
   gifActions: object.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  searchResultGifs: state.gifs.searchResultGifs
+  searchResultGifs: state.gifs.searchResultGifs,
+  selectedGifs: state.gifs.selectedGifs
 })
-
 
 const mapDispatchToProps = (dispatch) => ({
   uiActions: bindActionCreators(uiActions, dispatch),

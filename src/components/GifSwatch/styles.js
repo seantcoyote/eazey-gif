@@ -1,9 +1,8 @@
-// import {fonts, colors} from '../../constants'
-
 export default {
   base: {
-    display: 'flex',
-    margin: 20
+    width: '100%',
+    cursor: 'pointer',
+    boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px'
   },
   draggingStyles: {
     opacity: '0.3',

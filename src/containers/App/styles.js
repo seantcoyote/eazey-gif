@@ -1,8 +1,5 @@
-// import {fonts, colors} from '../../constants'
-
 export default {
   base: {
-    // display: 'flex',
     width: 'calc(100% - 100px)',
     height: '100%',
     margin: '0 50px',
@@ -38,15 +35,3 @@ export default {
     color: '#444'
   }
 }
-
-//     .gifSwatch {
-//       cursor: 'pointer',
-//       box-shadow: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
-//     }
-//   }
-// }
-//
-// .dropzone {
-//   min-height: '200px',
-//   // border: '4px solid #333',
-// }

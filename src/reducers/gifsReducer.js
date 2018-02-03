@@ -9,6 +9,15 @@ export default function gifsReducer (state = initialState.gifs, action) {
         searchResultGifs: action.payload
       }
 
+  case types.UPDATE_SELECTED_GIFS:
+    return {
+      ...state,
+      selectedGifs: {
+        ...state.selectedGifs,
+        [action.payload.id]: action.payload
+      }
+    }
+
     default:
       return state
   }
