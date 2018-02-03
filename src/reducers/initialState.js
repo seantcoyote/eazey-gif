@@ -5,6 +5,7 @@ export default {
     numberOfAjaxCalls: 0
   },
   gifs: {
-    searchResultGifs: []
+    searchResultGifs: [],
+    selectedGifs: {}
   }
 }

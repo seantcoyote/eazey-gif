@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {object, array} from 'prop-types'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import {DragDropContext} from 'react-dnd'
+import HTML5Backend from 'react-dnd-html5-backend'
 import * as uiActions from '../../actions/uiActions'
 import * as gifActions from '../../actions/gifActions'
 import SideBar from '../../components/SideBar'
@@ -51,4 +53,4 @@ const mapDispatchToProps = (dispatch) => ({
   gifActions: bindActionCreators(gifActions, dispatch)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default DragDropContext(HTML5Backend)(connect(mapStateToProps, mapDispatchToProps)(App))
