@@ -1,10 +1,10 @@
 import React from 'react'
 import {object, array, func, string} from 'prop-types'
-import GifSwatch from '../GifSwatch'
+import GifCard from '../GifCard'
 import defaultStyles from './styles'
 
-const renderSwatch = (selectedGifs, gif) => {
-  const swatchProps = {
+const renderCard = (selectedGifs, gif) => {
+  const cardProps = {
     id: gif.id,
     title: gif.title,
     thumbnail: gif.images,
@@ -18,15 +18,15 @@ const renderSwatch = (selectedGifs, gif) => {
 
   return (
     <div key={gif.id} style={{marginBottom: 10}}>
-      <GifSwatch {...swatchProps} />
+      <GifCard {...cardProps} />
     </div>
   )
 }
 
 const SideBar = ({searchQuery, searchResultGifs, selectedGifs, handleSearchChange, styles}) => {
   const searchResults = searchResultGifs.length ?
-    searchResultGifs.map(renderSwatch.bind(null, selectedGifs)) :
-    <p>Whoa, there are no gifs for the term "{searchQuery}"! Maybe try "campfire"?</p>
+    searchResultGifs.map(renderCard.bind(null, selectedGifs)) :
+    <p>Whoa, there are no gifs for the term "{searchQuery}"!<br /><br />Maybe try "campfire"?</p>
 
   return (
     <aside style={{...defaultStyles.base, ...styles}}>

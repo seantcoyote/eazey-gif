@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import GifSwatch from './GifSwatch'
+import GifCard from './GifCard'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(<GifSwatch />, div)
+  ReactDOM.render(<GifCard />, div)
   ReactDOM.unmountComponentAtNode(div)
 })

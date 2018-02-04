@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {func, object, bool} from 'prop-types'
 import {DragSource} from 'react-dnd'
 import {DraggableTypes} from '../../constants'
+import ImageCaption from '../ImageCaption'
 import defaultStyles from './styles'
 
 // See react-dnd docs for details: http://gaearon.github.io/react-dnd/docs-overview.html
@@ -21,7 +22,7 @@ const collect = (connect, monitor) => {
   }
 }
 
-class GifSwatch extends Component {
+class GifCard extends Component {
   state = {
     animateThumbnail: false
   }
@@ -38,7 +39,6 @@ class GifSwatch extends Component {
     const {isDragging, connectDragSource, title, thumbnail, styles} = this.props
     const draggingStyles = isDragging ? defaultStyles.draggingStyles : {}
     let imageType = this.state.animateThumbnail ? 'fixed_width_small' : 'fixed_width_small_still'
-    const normalizedTitle = (title.charAt(0).toUpperCase() + title.substring(1)).trim() || 'Untitled'
 
     return connectDragSource(
       <div
@@ -51,16 +51,16 @@ class GifSwatch extends Component {
           alt={title}
           style={{width: '100%'}}
         /><br />
-        <p style={defaultStyles.title}>{normalizedTitle}</p>
+        <ImageCaption text={title} />
       </div>
     )
   }
 }
 
-GifSwatch.propTypes = {
+GifCard.propTypes = {
   thumbnail: object.isRequired,
   connectDragSource: func.isRequired, // Injected by React DnD
   isDragging: bool.isRequired // Injected by React DnD
 }
 
-export default DragSource(DraggableTypes.GIF, cardSource, collect)(GifSwatch)
+export default DragSource(DraggableTypes.GIF, cardSource, collect)(GifCard)

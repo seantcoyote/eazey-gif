@@ -6,9 +6,18 @@ export default {
     width: '100%',
     height: '100%'
   },
-  gif: {
-    margin: '10px',
-    boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px'
+  gifCard: {
+    width: 'auto',
+    height: 'auto',
+    margin: 10,
+    boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
+    borderRadius: '2px',
+    backgroundColor: 'white'
+  },
+  caption: {
+    marginTop: 5,
+    padding: '0 5px 10px 5px',
+    fontSize: '0.9em'
   },
   text: {
     margin: '150px auto',
