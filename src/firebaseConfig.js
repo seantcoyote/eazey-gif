@@ -2,12 +2,12 @@ import firebase from 'firebase'
 import 'firebase/firestore'
 
 const config = {
-  apiKey: "AIzaSyAKRwyuayzluTZA0GbCMQ5ICJ79FsySBX0",
-  authDomain: "eaze-giphy-app.firebaseapp.com",
-  databaseURL: "https://eaze-giphy-app.firebaseio.com",
-  projectId: "eaze-giphy-app",
-  storageBucket: "eaze-giphy-app.appspot.com",
-  messagingSenderId: "180106841995"
+  apiKey: "AIzaSyAcaNiQTc_9FoVGCJyK0KMc6-DcaTsO1Pk",
+  authDomain: "eazey-gif.firebaseapp.com",
+  databaseURL: "https://eazey-gif.firebaseio.com",
+  projectId: "eazey-gif",
+  storageBucket: "eazey-gif.appspot.com",
+  messagingSenderId: "1050567859956"
 }
 
 export const fb = firebase.initializeApp(config)

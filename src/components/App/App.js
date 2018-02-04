@@ -11,7 +11,7 @@ const App = ({selectedGifs, addGif, styles}) => {
     <div style={{...defaultStyles.base, ...styles}}>
 
       <header style={defaultStyles.header}>
-        <h1 style={defaultStyles.headerTitle}>eazey giphilator</h1>
+        <h1 style={defaultStyles.headerTitle}>eazey gif</h1>
       </header>
 
       <div style={defaultStyles.contentContainer}>
