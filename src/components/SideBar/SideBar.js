@@ -1,10 +1,6 @@
 import React from 'react'
-import {object, array, string} from 'prop-types'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import {object, array, func, string} from 'prop-types'
 import GifSwatch from '../GifSwatch'
-import * as uiActions from '../../actions/uiActions'
-import * as gifActions from '../../actions/gifActions'
 import defaultStyles from './styles'
 
 const renderSwatch = (selectedGifs, gif) => {
@@ -13,9 +9,9 @@ const renderSwatch = (selectedGifs, gif) => {
     title: gif.title,
     thumbnail: gif.images,
   }
-
   const selectedIds = Object.keys(selectedGifs)
   const matches = selectedIds.filter((id) => id === gif.id)
+
   if (matches.length > 0) {
     return null
   }
@@ -27,14 +23,8 @@ const renderSwatch = (selectedGifs, gif) => {
   )
 }
 
-const SideBar = ({searchQuery, searchResultGifs, selectedGifs, uiActions, gifActions, styles}) => {
-  const resultSwatches = searchResultGifs.map(renderSwatch.bind(null, selectedGifs))
-
-  const onSearchChange = (e) => {
-    const query = e.target.value
-    uiActions.updateSearchQuery(query)
-    gifActions.loadGifData(query)
-  }
+const SideBar = ({searchQuery, searchResultGifs, selectedGifs, handleSearchChange, styles}) => {
+  const searchResultSwatches = searchResultGifs.map(renderSwatch.bind(null, selectedGifs))
 
   return (
     <aside style={{...defaultStyles.base, ...styles}}>
@@ -42,10 +32,12 @@ const SideBar = ({searchQuery, searchResultGifs, selectedGifs, uiActions, gifAct
         style={defaultStyles.searchInput}
         placeholder="Search GIPHY"
         value={searchQuery}
-        onChange={onSearchChange}
+        onChange={handleSearchChange}
       />
       <div style={defaultStyles.searchResults}>
-        {resultSwatches}
+        {!!searchResultSwatches.length && searchResultSwatches}
+        {/* 'eazey' has no gif results - there are probably others too, but not many!)*/}
+        {!searchResultSwatches.length && <p>Whoa, there are no gifs for the term "{searchQuery}"!</p>}
       </div>
     </aside>
   )
@@ -56,19 +48,7 @@ SideBar.propTypes = {
   searchQuery: string,
   searchResultGifs: array.isRequired,
   selectedGifs: object.isRequired,
-  uiActions: object.isRequired,
-  gifActions: object.isRequired
+  handleSearchChange: func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-  searchQuery: state.ui.searchQuery,
-  searchResultGifs: state.gifs.searchResultGifs,
-  selectedGifs: state.gifs.selectedGifs
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  uiActions: bindActionCreators(uiActions, dispatch),
-  gifActions: bindActionCreators(gifActions, dispatch)
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(SideBar)
+export default SideBar

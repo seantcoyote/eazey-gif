@@ -1,16 +1,17 @@
 export default {
   base: {
-    width: 'calc(100% - 100px)',
-    height: '100%',
+    width: 'calc(100vw - 100px)',
+    height: '100vh',
     margin: '0 50px',
     overflow: 'hidden',
-    background: 'white'
+    background: 'white',
+    color: '#555'
   },
   header: {
     height: '80px'
   },
   headerTitle: {
-    color: '#777',
+    color: '#1c9dec',
     letterSpacing: '4px',
     font: '100 40px helvetica, sans-serif'
   },
@@ -28,10 +29,10 @@ export default {
   },
   footer: {
     textAlign: 'center',
-    padding: '20px',
-    background: '#ccc'
+    fontSize: 10,
+    padding: 20
   },
   footerLink: {
-    color: '#444'
+    color: '#00AAE7'
   }
 }

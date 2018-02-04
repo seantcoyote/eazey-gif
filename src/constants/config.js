@@ -1,6 +1,6 @@
 export const GIPHY_API_KEY = 'dc6zaTOxFJmzC'
 export const urls = {
-  giphySearch: 'http://api.giphy.com/v1/gifs/search',
-  footerUrl: 'https://www.youtube.com/watch?v=ef0o5wN1GvQ'
+  giphySearch: 'https://api.giphy.com/v1/gifs/search',
+  footerUrl: 'https://www.youtube.com/watch?v=ef0o5wN1GvQ' // Yellowman Can!
 }
-export const defalutQuery = 'damian marley'
+export const defalutQuery = 'campfire'

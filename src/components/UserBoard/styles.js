@@ -17,7 +17,7 @@ export default {
     letterSpacing: '4px',
     font: '100 32px helvetica, sans-serif'
   },
-  overlayStyles: {
+  overlay: {
     position: 'absolute',
     top: 0,
     right: 0,

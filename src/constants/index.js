@@ -1,5 +1,4 @@
 export {colors} from './colors'
-export {fonts} from './fonts'
 
 export const DraggableTypes = {
   GIF: Symbol("GIF")

@@ -2,9 +2,8 @@ import './assets/styles/index.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import registerServiceWorker from './registerServiceWorker'
-import App from './containers/App'
+import AppContainer from './containers/AppContainer'
 import configureStore from './store/configureStore'
 import initialState from './reducers/initialState'
 import {loadGifData} from './actions/gifActions'
@@ -14,9 +13,7 @@ store.dispatch(loadGifData())
 
 const YellowmanCan = () => (
   <Provider store={store}>
-    <MuiThemeProvider>
-      <App />
-    </MuiThemeProvider>
+    <AppContainer />
   </Provider>
 )
 

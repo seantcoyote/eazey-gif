@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import NewContainer from './NewContainer'
+import SideBarContainer from './SideBarContainer'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(<NewContainer />, div)
+  ReactDOM.render(<SideBarContainer />, div)
   ReactDOM.unmountComponentAtNode(div)
 })

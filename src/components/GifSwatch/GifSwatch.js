@@ -4,8 +4,7 @@ import {DragSource} from 'react-dnd'
 import {DraggableTypes} from '../../constants'
 import defaultStyles from './styles'
 
-// react-dnd docs: http://gaearon.github.io/react-dnd/docs-overview.html
-
+// See react-dnd docs for details: http://gaearon.github.io/react-dnd/docs-overview.html
 // Specifies the drag source contract.
 const cardSource = {
   beginDrag (props) { // Return the data describing the dragged item
@@ -58,9 +57,8 @@ class GifSwatch extends Component {
 
 GifSwatch.propTypes = {
   thumbnail: object.isRequired,
-  // Injected by React DnD:
-  connectDragSource: func.isRequired,
-  isDragging: bool.isRequired
+  connectDragSource: func.isRequired, // Injected by React DnD
+  isDragging: bool.isRequired // Injected by React DnD
 }
 
 export default DragSource(DraggableTypes.GIF, cardSource, collect)(GifSwatch)
