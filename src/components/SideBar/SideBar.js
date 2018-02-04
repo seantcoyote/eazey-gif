@@ -24,7 +24,9 @@ const renderSwatch = (selectedGifs, gif) => {
 }
 
 const SideBar = ({searchQuery, searchResultGifs, selectedGifs, handleSearchChange, styles}) => {
-  const searchResultSwatches = searchResultGifs.map(renderSwatch.bind(null, selectedGifs))
+  const searchResults = searchResultGifs.length ?
+    searchResultGifs.map(renderSwatch.bind(null, selectedGifs)) :
+    <p>Whoa, there are no gifs for the term "{searchQuery}"! Maybe try "campfire"?</p>
 
   return (
     <aside style={{...defaultStyles.base, ...styles}}>
@@ -35,9 +37,7 @@ const SideBar = ({searchQuery, searchResultGifs, selectedGifs, handleSearchChang
         onChange={handleSearchChange}
       />
       <div style={defaultStyles.searchResults}>
-        {!!searchResultSwatches.length && searchResultSwatches}
-        {/* 'eazey' has no gif results - there are probably others too, but not many!)*/}
-        {!searchResultSwatches.length && <p>Whoa, there are no gifs for the term "{searchQuery}"!</p>}
+        {searchResults}
       </div>
     </aside>
   )

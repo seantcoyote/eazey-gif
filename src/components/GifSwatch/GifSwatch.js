@@ -35,9 +35,10 @@ class GifSwatch extends Component {
   }
 
   render() {
-    const {isDragging, connectDragSource, thumbnail, styles} = this.props
+    const {isDragging, connectDragSource, title, thumbnail, styles} = this.props
     const draggingStyles = isDragging ? defaultStyles.draggingStyles : {}
     let imageType = this.state.animateThumbnail ? 'fixed_width_small' : 'fixed_width_small_still'
+    const normalizedTitle = (title.charAt(0).toUpperCase() + title.substring(1)).trim() || 'Untitled'
 
     return connectDragSource(
       <div
@@ -47,9 +48,10 @@ class GifSwatch extends Component {
       >
         <img
           src={thumbnail[imageType].url}
-          alt={thumbnail.title}
+          alt={title}
           style={{width: '100%'}}
-        />
+        /><br />
+        <p style={defaultStyles.title}>{normalizedTitle}</p>
       </div>
     )
   }

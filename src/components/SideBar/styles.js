@@ -6,7 +6,7 @@ export default {
     padding: 0
   },
   searchInput: {
-    width: 'calc(100% - 28px)',
+    width: 'calc(100% - 13px)',
     height: '40px',
     margin: '0 0 20px',
     padding: '3px 12px',
@@ -17,6 +17,7 @@ export default {
   searchResults: {
     width: '100%',
     height: 'calc(100% - 80px)',
+    padding: '0 10px 0 5px',
     overflowX: 'auto',
     overflowY: 'auto'
   }
