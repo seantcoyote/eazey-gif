@@ -1,7 +1,6 @@
 import React from 'react'
 import {func, string, bool} from 'prop-types'
 import {DropTarget} from 'react-dnd'
-import GifCard from '../GifCard'
 import {DraggableTypes} from '../../constants'
 import ImageCaption from '../ImageCaption'
 import defaultStyles from './styles'
@@ -38,7 +37,7 @@ const UserBoard = ({connectDropTarget, isOver, canDrop, selectedGifs, styles}) =
             width={image.width}
             height={image.height}
           />
-          <ImageCaption text={gif.title} style={defaultStyles.caption} />
+          <ImageCaption text={gif.title} styles={defaultStyles.caption} />
         </div>
       )
     })

@@ -1,9 +1,10 @@
 import React from 'react'
-import {object} from 'prop-types'
+import {object, string} from 'prop-types'
 import defaultStyles from './styles'
 
 const ImageCaption = ({text, styles}) => {
   const caption = (text.charAt(0).toUpperCase() + text.substring(1)).trim() || 'Untitled'
+
   return (
     <p style={{...defaultStyles.base, ...styles}}>
       {caption}
@@ -12,7 +13,8 @@ const ImageCaption = ({text, styles}) => {
 }
 
 ImageCaption.propTypes = {
-  styles: object
+  styles: object,
+  text: string
 }
 
 export default ImageCaption

@@ -2,13 +2,14 @@ export default {
   base: {
     display: 'flex',
     flexFlow: 'row wrap',
-    justifyContent: 'space-between',
-    width: '100%',
-    height: '100%'
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
+    width: 'calc(100% - 20px)',
+    height: 'calc(100% - 20px)',
+    padding: 10
   },
   gifCard: {
-    width: 'auto',
-    height: 'auto',
     margin: 10,
     boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
     borderRadius: '2px',
@@ -16,8 +17,8 @@ export default {
   },
   caption: {
     marginTop: 5,
-    padding: '0 5px 10px 5px',
-    fontSize: '0.9em'
+    padding: '0 10px 5px',
+    fontSize: '0.8 em'
   },
   text: {
     margin: '150px auto',
