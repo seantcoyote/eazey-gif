@@ -1,4 +1,8 @@
-## Eaze frontend test project - Sean Crawford
+## Eaze frontend test project
+
+Sean Crawford: https://www.linkedin.com/in/seantcoyote/
+
+View deployed version: https://eazey-gif.firebaseapp.com/
 
 (Bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app))
 
