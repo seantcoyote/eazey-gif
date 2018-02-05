@@ -1,6 +1,10 @@
 ## Eaze frontend test project
 
-Sean Crawford: https://www.linkedin.com/in/seantcoyote/
+Sean Crawford
+https://www.linkedin.com/in/seantcoyote
+https://github.com/seantcoyote
+https://stackoverflow.com/users/2532812/seantcoyote
+https://twitter.com/seanTcoyote
 
 View deployed version: https://eazey-gif.firebaseapp.com/
 
