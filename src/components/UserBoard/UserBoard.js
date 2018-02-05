@@ -79,5 +79,3 @@ const wrap = compose(
 )
 
 export default wrap(UserBoard)
-
-// export default Radium(DropTarget(DraggableTypes.GIF, targetSpec, collect)(UserBoard))
