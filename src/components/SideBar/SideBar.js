@@ -1,5 +1,6 @@
 import React from 'react'
 import {object, array, func, string} from 'prop-types'
+import Radium from 'radium'
 import GifCard from '../GifCard'
 import defaultStyles from './styles'
 
@@ -17,7 +18,7 @@ const renderCard = (selectedGifs, gif) => {
   }
 
   return (
-    <div key={gif.id} style={{marginBottom: 10}}>
+    <div key={gif.id}>
       <GifCard {...cardProps} />
     </div>
   )
@@ -51,4 +52,4 @@ SideBar.propTypes = {
   handleSearchChange: func.isRequired
 }
 
-export default SideBar
+export default Radium(SideBar)

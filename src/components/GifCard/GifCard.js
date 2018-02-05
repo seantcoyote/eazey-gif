@@ -38,7 +38,7 @@ class GifCard extends Component {
   render() {
     const {isDragging, connectDragSource, title, thumbnail, styles} = this.props
     const draggingStyles = isDragging ? defaultStyles.draggingStyles : {}
-    let imageType = this.state.animateThumbnail ? 'fixed_width_small' : 'fixed_width_small_still'
+    let imageType = this.state.animateThumbnail ? 'fixed_width' : 'fixed_width_still'
 
     return connectDragSource(
       <div

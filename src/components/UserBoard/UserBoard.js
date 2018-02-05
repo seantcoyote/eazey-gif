@@ -1,6 +1,8 @@
 import React from 'react'
 import {func, string, bool} from 'prop-types'
+import {compose} from 'redux'
 import {DropTarget} from 'react-dnd'
+import Radium from 'radium'
 import {DraggableTypes} from '../../constants'
 import ImageCaption from '../ImageCaption'
 import defaultStyles from './styles'
@@ -23,9 +25,20 @@ const collect = (connect, monitor) => {
   }
 }
 
-const UserBoard = ({connectDropTarget, isOver, canDrop, selectedGifs, styles}) => {
-  const introMessage = <p style={defaultStyles.text}>Drag a gif here to start your collection!</p>
+const isSmallScreen = window.innerWidth < 1025
 
+const introMessage = (
+  <span>
+    <p style={defaultStyles.text}>
+      Drag a gif here to start your collection!
+    </p>
+    {isSmallScreen &&
+      <p style={defaultStyles.disclaimer}>*BTW, if you're using a mobile device, we're super sorry, but eazey gif doesn't yet support drag and drop on touchscreens :-(</p>
+    }
+  </span>
+)
+
+const UserBoard = ({connectDropTarget, isOver, canDrop, selectedGifs, styles}) => {
   const images = Object.keys(selectedGifs).map((id) => {
       const gif = selectedGifs[id]
       const image = gif.images.fixed_height
@@ -34,13 +47,14 @@ const UserBoard = ({connectDropTarget, isOver, canDrop, selectedGifs, styles}) =
           <img
             alt={gif.title}
             src={image.url}
-            width={image.width}
+            width="100%"
             height={image.height}
           />
-          <ImageCaption text={gif.title} styles={defaultStyles.caption} />
+          <ImageCaption text={gif.title} styles={defaultStyles.caption}/>
         </div>
       )
-    })
+    }
+  )
 
   return connectDropTarget(
     <div style={{...defaultStyles.base, ...styles}}>
@@ -59,4 +73,11 @@ UserBoard.propTypes = {
   canDrop: bool.isRequired
 }
 
-export default DropTarget(DraggableTypes.GIF, targetSpec, collect)(UserBoard)
+const wrap = compose(
+  DropTarget(DraggableTypes.GIF, targetSpec, collect),
+  Radium
+)
+
+export default wrap(UserBoard)
+
+// export default Radium(DropTarget(DraggableTypes.GIF, targetSpec, collect)(UserBoard))

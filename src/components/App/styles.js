@@ -5,7 +5,11 @@ export default {
     margin: '0 50px',
     overflow: 'hidden',
     background: 'white',
-    color: '#555'
+    color: '#555',
+    '@media screen and (max-width: 860px)': {
+      width: 'calc(100vw - 40px)',
+      margin: '0 20px'
+    }
   },
   header: {
     height: '80px'
@@ -17,15 +21,21 @@ export default {
   },
   contentContainer: {
     display: 'flex',
+    flexFlow: 'row wrap',
     justifyContent: 'space-between',
-    height: 'calc(100% - 160px)'
+    height: 'calc(100% - 160px)',
+    '@media screen and (max-width: 540px)': {
+      justifyContent: 'center'
+    }
   },
   gifBoard: {
-    width: '100%',
-    height: '100%',
+    flex: '3 0',
     overflowX: 'auto',
     overflowY: 'auto',
-    background: '#eee'
+    background: '#eee',
+    '@media screen and (max-width: 540px)': {
+      display: 'none'
+    }
   },
   footer: {
     textAlign: 'center',

@@ -1,7 +1,8 @@
 export default {
   base: {
-    width: '240px',
-    height: '100%',
+    flex: '1 0',
+    maxWidth: 280,
+    minWidth: 160,
     margin: '0 40px 0 0',
     padding: 0
   },
@@ -16,7 +17,7 @@ export default {
   },
   searchResults: {
     width: '100%',
-    height: 'calc(100% - 80px)',
+    height: 'calc(100% - 70px)',
     padding: '0 10px 0 5px',
     overflowX: 'auto',
     overflowY: 'auto'
