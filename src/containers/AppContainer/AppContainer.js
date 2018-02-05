@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {object, array} from 'prop-types'
 import {bindActionCreators, compose} from 'redux'
 import {connect} from 'react-redux'
+import {StyleRoot} from 'radium'
 import {DragDropContext} from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
 import App from '../../components/App'
@@ -15,7 +16,9 @@ class AppContainer extends Component {
 
   render () {
     return (
-      <App selectedGifs={this.props.selectedGifs} addGif={this.addGif} />
+      <StyleRoot>
+        <App selectedGifs={this.props.selectedGifs} addGif={this.addGif} />
+      </StyleRoot>
     )
   }
 }

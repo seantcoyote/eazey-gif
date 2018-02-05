@@ -8,7 +8,7 @@ export const updateSelectedGifs = (selectedGif) => ({
   payload: selectedGif
 })
 
-const loadGifDataSuccess = (data) => ({
+export const loadGifDataSuccess = (data) => ({
   type: types.LOAD_GIF_DATA_SUCCESS,
   payload: data
 })

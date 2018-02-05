@@ -2,7 +2,6 @@ import './assets/styles/index.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import {StyleRoot} from 'radium'
 import registerServiceWorker from './registerServiceWorker'
 import AppContainer from './containers/AppContainer'
 import configureStore from './store/configureStore'
@@ -14,9 +13,7 @@ store.dispatch(loadGifData())
 
 const EazeyGifDecarboxylator = () => (
   <Provider store={store}>
-    <StyleRoot>
-      <AppContainer />
-    </StyleRoot>
+    <AppContainer />
   </Provider>
 )
 

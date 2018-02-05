@@ -15,10 +15,10 @@ describe('uiActions', () => {
       payload: true
     })
   })
-  
-  test('updateNumberOfAjaxCalls creates an UPDATE_NUMBER_OF_AJAX_CALLS action', () => {
-    expect(actions.updateNumberOfAjaxCalls(1)).toEqual({
-      type: types.UPDATE_NUMBER_OF_AJAX_CALLS,
+
+  test('setNumberOfAjaxCalls creates an SET_NUMBER_OF_AJAX_CALLS action', () => {
+    expect(actions.setNumberOfAjaxCalls(1)).toEqual({
+      type: types.SET_NUMBER_OF_AJAX_CALLS,
       payload: 1
     })
   })

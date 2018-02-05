@@ -24,7 +24,7 @@ const renderCard = (selectedGifs, gif) => {
   )
 }
 
-const SideBar = ({searchQuery, searchResultGifs, selectedGifs, handleSearchChange, styles}) => {
+const SideBar = ({searchQuery = '', searchResultGifs, selectedGifs, handleSearchChange, styles}) => {
   const searchResults = searchResultGifs.length ?
     searchResultGifs.map(renderCard.bind(null, selectedGifs)) :
     <p>Whoa, there are no gifs for the term "{searchQuery}"!<br /><br />Maybe try "campfire"?</p>
